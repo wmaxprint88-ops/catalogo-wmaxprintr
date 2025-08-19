@@ -1,43 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Catálogo | W Maxprint R</title>
   <style>
-    :root {
-      --brand-red: #e31212;
-      --brand-blue: #0b61a4;
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; margin: 0; font-family: Arial, Helvetica, sans-serif; }
-    header {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 1rem; padding: 12px 16px;
-      background: linear-gradient(90deg,var(--brand-blue), var(--brand-red));
-      color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.15);
-    }
-    header h1 { font-size: 1.05rem; margin: 0; font-weight: bold; }
-    header a { color: #fff; text-decoration: underline; }
-    .viewer { height: calc(100vh - 56px); width: 100vw; border: none; }
-    .fallback { display: grid; place-items: center; height: calc(100vh - 56px); padding: 24px; text-align: center; }
-    .fallback a { color: var(--brand-blue); font-weight: 600; }
+    :root { --brand-red:#e31212; --brand-blue:#0b61a4; }
+    html, body { height:100%; margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:.75rem;
+      padding:10px 14px; color:#fff; background:linear-gradient(90deg,var(--brand-blue),var(--brand-red)); }
+    header a { color:#fff; text-decoration:underline; }
+    iframe { width:100%; height:calc(100vh - 48px); border:0; display:block; }
+    .fallback { padding:24px; text-align:center; }
   </style>
 </head>
 <body>
   <header>
-    <h1>W Maxprint R — Catálogo</h1>
-    <a href="60.pdf" download>Descargar PDF</a>
+    <strong>W Maxprint R — Catálogo</strong>
+    <a href="https://drive.google.com/file/d/18VQF66NFf8vOXjq_gj0BY3ZHA_K5hC1G/view" target="_blank" rel="noopener">
+      Abrir en pestaña nueva
+    </a>
   </header>
 
-  <!-- Cambia el nombre si tu PDF no se llama 60.pdf -->
-  <object class="viewer" data="60.pdf#view=FitH" type="application/pdf">
-    <div class="fallback">
-      <p>No se pudo cargar el catálogo en este navegador.</p>
-      <p>
-        <a href="60.pdf" target="_blank" rel="noopener">Abrir catálogo en otra pestaña</a>
-      </p>
-    </div>
-  </object>
+  <!-- 👇 Usa /preview aquí -->
+  <iframe
+    src="https://drive.google.com/file/d/18VQF66NFf8vOXjq_gj0BY3ZHA_K5hC1G/preview"
+    allow="fullscreen"
+  ></iframe>
+
+  <div class="fallback">
+    Si no ves el PDF, usa el enlace de arriba.
+  </div>
 </body>
 </html>
